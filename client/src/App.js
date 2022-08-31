@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import TodosPage from './components/TodosPage';
-import Navigation from './components/Navigation';
-import Login from './components/Login';
-import Home from './components/Home';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { loadUser } from './actions/authActions';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import rootReducer from './reducers/rootReducer';
-import thunk from 'redux-thunk';
-import Register from './components/Register';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import axiosDefaults from 'axios/lib/defaults';
-// axiosDefaults.baseURL = 'https://p0st-master.herokuapp.com/';
-axiosDefaults.baseURL = 'http://localhost:8080';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { applyMiddleware, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import { loadUser } from './actions/authActions';
+import Home from './components/Home';
+import Login from './components/Login';
+import Navigation from './components/Navigation';
+import Register from './components/Register';
+import TodosPage from './components/TodosPage';
+import rootReducer from './reducers/rootReducer';
+axiosDefaults.baseURL = 'https://bofg-takehome-mahesh.herokuapp.com/';
+// axiosDefaults.baseURL = 'http://localhost:8080';
 
 const store = createStore(
   rootReducer,
